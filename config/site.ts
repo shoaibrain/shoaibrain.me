@@ -21,20 +21,16 @@ export const siteConfig = {
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: "github",
-      href: "https://github.com/shoaibrain/",
-    },
-    {
-      title: "twitter",
-      href: "https://twitter.com/shoaib_rain",
+      title: "blog",
+      href: "/blog",
     },
     {
       title: "timeline",
       href: "/timeline",
     },
     {
-      title:"linkedin",
-      href:"https://www.linkedin.com/in/shoaibrain/"
+      title:"github",
+      href:"https://www.github.com/shoaibrain"
     }
   ],
 }
