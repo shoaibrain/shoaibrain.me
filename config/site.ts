@@ -14,12 +14,24 @@ export const siteConfig = {
   ],
   links: {
     twitter: "https://twitter.com/shoaib_rain",
-    github: "https://github.com/shoaibrain/shoaibrain.me",
+    github: "https://github.com/shoaibrain",
   },
 }
 
 export const marketingConfig: MarketingConfig = {
   mainNav: [
+    {
+      title: "projects",
+      href:"https://github.com/shoaibrain?tab=repositories",
+    },
+    {
+      title: "twitter",
+      href: "https://twitter.com/shoaib_rain",
+    },
+    {
+      title: "linkedin",
+      href: "https://www.linkedin.com/in/shoaibrain/",
+    },
     {
       title: "blog",
       href: "/blog",
@@ -28,9 +40,5 @@ export const marketingConfig: MarketingConfig = {
       title: "timeline",
       href: "/timeline",
     },
-    {
-      title:"github",
-      href:"https://www.github.com/shoaibrain"
-    }
   ],
 }

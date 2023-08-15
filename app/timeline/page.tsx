@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BlogPage = () => {
+const Timeline = () => {
   return (
     <div className="flex items-center justify-center h-screen">
-    <div className="text-center">
+   <div className="text-center">
       <h1 className="text-4xl font-bold mb-4">🚧 Under Construction 🚧</h1>
       <p className="text-gray-600">I&apos;m working hard to bring you something amazing!</p>
     </div>
@@ -12,4 +12,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default Timeline

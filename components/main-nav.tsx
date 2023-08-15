@@ -16,7 +16,7 @@ export function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <div className="flex gap-3 md:gap-10">
+    <div className="flex gap-2 md:gap-10">
       <Link href="/" className="items-center space-x-2 md:flex">
         home
       </Link>

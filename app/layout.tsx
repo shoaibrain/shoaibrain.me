@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 import { ThemeProvider } from '@/components/theme-provider'
+import { MainNav } from '@/components/main-nav'
+import { marketingConfig } from '@/config/site'
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -32,6 +34,11 @@ export default function RootLayout({
           fontHeading.variable
         )}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <header className="container z-40 bg-background">
+        <div className="flex h-20 items-center justify-between py-6">
+          <MainNav items={marketingConfig.mainNav} />
+        </div>
+      </header>
           {children}
         </ThemeProvider>
         </body>
