@@ -4,7 +4,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Shoaib Rain",
-  description:"home",
+  description:"Home",
   url: "https://www.shoaibrain.me",
   mainNav: [
     {
@@ -15,6 +15,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/shoaib_rain",
     github: "https://github.com/shoaibrain",
+    resume: "https://docs.google.com/document/d/1SOvcXS6SrS-ZpT9Hlub4jTWUOU9sQTnqEWgp_6TEkho/edit?usp=sharing"
   },
 }
 
@@ -33,12 +34,9 @@ export const marketingConfig: MarketingConfig = {
       href: "https://www.linkedin.com/in/shoaibrain/",
     },
     {
-      title: "blog",
-      href: "/blog",
-    },
-    {
-      title: "timeline",
-      href: "/timeline",
-    },
+      title:"resume",
+      href:"https://docs.google.com/document/d/1SOvcXS6SrS-ZpT9Hlub4jTWUOU9sQTnqEWgp_6TEkho/edit?usp=sharing"
+    }
+
   ],
 }
