@@ -29,7 +29,7 @@ export default async function AboutPage() {
             <br />
             I'm currently pursuing a bachelors in Computer Science at the University of Texas-Arlington.
             On this website, you'll find an incomplete directory of my engineering and artistic work, 
-            as well as ramblings about whatever happens to cross my mind 🌚
+            as well as ramblings about whatever happens to cross my mind.
           </div> 
 
         </div>
