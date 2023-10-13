@@ -22,16 +22,16 @@ export const siteConfig = {
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: "projects",
+      title: "about",
+      href: "/about",
+    },
+    {
+      title:"blog",
+      href:"/blog"
+    },
+    {
+      title: "project",
       href:"https://github.com/shoaibrain?tab=repositories",
-    },
-    {
-      title: "twitter",
-      href: "https://twitter.com/shoaib_rain",
-    },
-    {
-      title: "linkedin",
-      href: "https://www.linkedin.com/in/shoaibrain/",
     },
     {
       title:"resume",
