@@ -1,7 +1,10 @@
 import { siteConfig } from '@/config/site'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 export default async function HomePage() {
+  // temp redirect
+  redirect('/about')
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">

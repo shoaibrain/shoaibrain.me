@@ -25,10 +25,10 @@ export const marketingConfig: MarketingConfig = {
       title: "about",
       href: "/about",
     },
-    {
-      title:"blog",
-      href:"/blog"
-    },
+    // {
+    //   title:"blog",
+    //   href:"/blog"
+    // },
     {
       title: "project",
       href:"https://github.com/shoaibrain?tab=repositories",
