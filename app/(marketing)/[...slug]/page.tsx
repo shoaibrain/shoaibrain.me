@@ -9,7 +9,7 @@ import { Metadata } from "next"
 import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { absoluteUrl } from "@/lib/utils"
-import { allPages } from "@/.contentlayer/generated/index 2.mjs"
+import { allPages } from "@/.contentlayer/generated"
 
 interface PageProps {
   params: {

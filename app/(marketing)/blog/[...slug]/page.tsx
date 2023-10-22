@@ -11,7 +11,7 @@ import Link from "next/link"
 import { env } from "@/env.mjs"
 import { absoluteUrl, cn, formatDate } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { allAuthors, allPosts } from "@/.contentlayer/generated/index 2.mjs"
+import { allAuthors, allPosts } from "@/.contentlayer/generated"
 
 
 interface PostPageProps {
