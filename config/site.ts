@@ -31,7 +31,7 @@ export const marketingConfig: MarketingConfig = {
     },
     {
       title: "project",
-      href:"https://github.com/shoaibrain?tab=repositories",
+      href:"/project",
     },
     {
       title:"resume",
