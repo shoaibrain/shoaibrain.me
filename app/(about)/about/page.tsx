@@ -1,5 +1,3 @@
-import { siteConfig } from "@/config/site";
-import Link from "next/link";
 import Image from "next/image";
 import hike from "@/public/images/hike.jpeg";
 export default async function AboutPage() {
@@ -24,11 +22,11 @@ export default async function AboutPage() {
             <span className="font-bold my-4 py-4"> About me <br/> </span>
 
             I'm an engineer with focus in software engineering, machine learning and robotics.
-            In the past I've worked for Panasonic, Srimatrix Inc, UT Texas, NetApp, and a number of other companies.
-            In addition to my engineering work, I also enjoy music, hiking, and gaming.
+            In the past I've worked for Panasonic, NetApp, UT Texas, Srimatrix Inc, and a number of other companies.
+            In addition to my engineering work, I also enjoy podcast, music, hiking, and gaming.
             <br />
             I'm currently pursuing a bachelors in Computer Science at the University of Texas-Arlington.
-            On this website, you'll find an incomplete directory of my engineering and artistic work, 
+            On this website, you'll find an incomplete directory of my engineering work, personal blogs, 
             as well as ramblings about whatever happens to cross my mind.
           </div> 
 

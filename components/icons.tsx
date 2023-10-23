@@ -3,6 +3,7 @@ import {
     Moon,
     SunMedium,
     Twitter,
+    Laptop,
     type Icon as LucideIcon,
   } from "lucide-react"
   
@@ -12,5 +13,6 @@ import {
     
     sun: SunMedium,
     moon: Moon,
+    laptop: Laptop,
     twitter: Twitter,
   }

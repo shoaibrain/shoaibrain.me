@@ -1,9 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { allPosts } from "contentlayer/generated"
-import { compareDesc } from "date-fns"
 
-import { cn, formatDate } from "@/lib/utils"
+import Link from "next/link"
+
+import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export const metadata = {
@@ -12,12 +10,6 @@ export const metadata = {
 }
 
 export default async function ProjectPage() {
-//   const posts = allPosts
-//     .filter((post) => post.published)
-//     .sort((a, b) => {
-//       return compareDesc(new Date(a.date), new Date(b.date))
-//     })
-const posts = []
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
@@ -34,7 +26,7 @@ const posts = []
       <hr className="my-8" />
       <Link href="https://github.com/shoaibrain" className={cn(buttonVariants({ size: "lg" }))}>
               view my work on github 
-            </Link>
+      </Link>
     </div>
   )
 }

@@ -6,6 +6,8 @@ import localFont from "next/font/local"
 import { ThemeProvider } from '@/components/theme-provider'
 import { MainNav } from '@/components/main-nav'
 import { marketingConfig } from '@/config/site'
+import { TailwindIndicator } from '@/components/tailwind-indicator'
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,12 +35,10 @@ export default function RootLayout({
           fontSans.variable,
           fontHeading.variable
         )}>
-              <header className="container z-30 bg-background">
-                <div className="flex h-20 items-center justify-between py-6">
-                  <MainNav items={marketingConfig.mainNav} />
-                </div>
-          </header>
-          {children}
+           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              {children}
+              <TailwindIndicator />
+          </ThemeProvider>
         </body>
     </html>
   )

@@ -11,7 +11,7 @@ export default async function HomePage() {
         <div className="container flex justify-center items-center w-96 md:w-1/2 text-center">
           <p className="text-xl leading-8 text-gray-700 text-left"> <span className="font-bold">Shoaib Rain</span><br/> <br />
            Lorem, ipsum dolor sit amet consectetur adipisicing elit. At unde dignissimos recusandae assumenda ex minus eos officiis quasi sequi harum similique, cupiditate quis.
-        <br /><br />
+            <br /><br />
            <Link href="/about"  className="text-blue-500">Know me more!</Link> <br /> <br />
     
           </p>
