@@ -3,6 +3,8 @@ import {
     Moon,
     SunMedium,
     Twitter,
+    ChevronLeft,
+    ChevronRight,
     Laptop,
     type Icon as LucideIcon,
   } from "lucide-react"
@@ -15,4 +17,6 @@ import {
     moon: Moon,
     laptop: Laptop,
     twitter: Twitter,
+    chevronLeft: ChevronLeft,
+    chevronRight: ChevronRight,
   }
