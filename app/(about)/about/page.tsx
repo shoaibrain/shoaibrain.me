@@ -7,7 +7,7 @@ export default async function AboutPage() {
         <>
         <div className="container flex justify-center items-center w-96 md:w-1/2 text-center">
 
-          <div className="text-xl leading-8 text-gray-700 text-left pb-4">
+          <div className="text-xl leading-8 text-left pb-4">
 
             <div className="relative my-8 h-96 mb-4">
               <Image
@@ -19,7 +19,7 @@ export default async function AboutPage() {
               className="lg object-cover"
               />
             </div>
-            <span className="font-bold my-4 py-4"> About me <br/> </span>
+            <span className="font-heading my-4 py-4"> About me <br/> </span>
 
             I'm an engineer with focus in software engineering, machine learning and robotics.
             In the past I've worked for Panasonic, NetApp, UT Texas, Srimatrix Inc, and a number of other companies.
