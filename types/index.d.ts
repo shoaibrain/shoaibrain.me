@@ -42,3 +42,7 @@ export type SiteConfig = {
 export type MarketingConfig = {
   mainNav: MainNavItem[]
 }
+export type WorksConfig = {
+  mainNav: MainNavItem[]
+  sidebarNav: SidebarNavItem[]
+}
