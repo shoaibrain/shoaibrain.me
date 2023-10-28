@@ -23,23 +23,22 @@ export const worksConfig: WorksConfig = {
       items: [
         {
           title: "Overview",
-          href: "work/eduSpace",
-          disabled : true,
-          
+          href: "/work/eduSpace",
+          disabled : false, 
         },
         {
           title: "Technical details",
-          href: "/work",
-          disabled: true,
+          href: "/work/in-progress",
+          disabled: false,
         },
         {
           title: "Testing & Quality",
-          href: "/work",
+          href: "/work/in-progress",
           disabled: true,
         },
         {
           title: "User Experience",
-          href: "/work",
+          href: "/work/in-progress",
           disabled: true,
         },
       ],
