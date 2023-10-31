@@ -17,7 +17,7 @@ export default async function AboutLayout({
         </div>
       </header>
       <main className="flex-1">{children}</main>
-      <SiteFooter />
+      <SiteFooter className="border-t" />
     </div>
   )
 }

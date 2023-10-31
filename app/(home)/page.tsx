@@ -1,20 +1,50 @@
 import { siteConfig } from '@/config/site'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from 'next/image'
+import profile from "@/public/images/avatars/profile.jpg";
+import { Button } from '@/components/ui/button'
+import { MoveUpRight } from 'lucide-react'
+
 
 export default async function HomePage() {
   // temp redirect
-  redirect('/about')
+  // redirect('/about')
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-        <div className="container flex justify-center items-center w-96 md:w-1/2 text-center">
-          <p className="text-xl leading-8 text-gray-700 text-left"> <span className="font-bold">Shoaib Rain</span><br/> <br />
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. At unde dignissimos recusandae assumenda ex minus eos officiis quasi sequi harum similique, cupiditate quis.
-            <br /><br />
-           <Link href="/about"  className="text-blue-500">Know me more!</Link> <br /> <br />
-    
-          </p>
+        <div className="container md:flex justify-center items-center md:w-1/2">
+        <figure className='sm:flex md:p-0'>
+            <div className='mx-auto my-auto sm:mr-8'>
+              <div className='mx-auto w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden'>
+                <Image
+                  src={profile}
+                  alt="SR"
+                  priority={true}
+                  layout='responsive' // Use responsive layout to maintain aspect ratio
+                  className='object-cover rounded-full'
+                />
+              </div>
+            </div>
+            
+            <div className="pt-6 sm:p-8 text-center sm:text-left space-y-4">
+                <figcaption className='text-xl text-left'>
+                    <div className="leading-8 font-bold">
+                      Shoaib Rain
+                    </div>
+                    <div className='text-muted-foreground'>
+                      Software Engineer in Dallas
+                    </div>
+                    <p className="text-lg font-medium ">
+                    Hi there! My name is Shoaib. I'm a software engineer.
+                    I enjoy playing music, hiking, listening podcasts,
+                    and try out new coffee shops. <br />
+                    <Link href="/about"  className="text-gray-500 underline">about me</Link> <br />
+              </p>
+                </figcaption>
+            </div>
+        </figure>
         </div>
       </section>
     </>

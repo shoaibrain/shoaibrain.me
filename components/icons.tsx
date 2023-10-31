@@ -5,6 +5,7 @@ import {
     Twitter,
     ChevronLeft,
     ChevronRight,
+    MoveUpRight,
     Laptop,
     type Icon as LucideIcon,
   } from "lucide-react"
@@ -17,6 +18,7 @@ import {
     moon: Moon,
     laptop: Laptop,
     twitter: Twitter,
+    moveUpRight: MoveUpRight,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
   }
