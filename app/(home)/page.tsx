@@ -1,16 +1,11 @@
-import { siteConfig } from '@/config/site'
+
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Image from 'next/image'
 import profile from "@/public/images/avatars/profile.jpg";
-import { Button } from '@/components/ui/button'
-import { MoveUpRight } from 'lucide-react'
 
 
 export default async function HomePage() {
-  // temp redirect
-  // redirect('/about')
+
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
