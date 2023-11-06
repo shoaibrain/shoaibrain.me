@@ -32,9 +32,9 @@ export default async function HomePage() {
                       Software Engineer in Dallas
                     </div>
                     <p className="text-lg font-medium ">
-                    Hi there! My name is Shoaib. I'm a software engineer.
+                    Hi there 👋 My name is Shoaib. I'm a software engineer.
                     I enjoy playing music, hiking, listening podcasts,
-                    and try out new coffee shops. <br />
+                    and trying out new coffee shops. <br />
                     <Link href="/about"  className="text-gray-500 underline">about me</Link> <br />
               </p>
                 </figcaption>

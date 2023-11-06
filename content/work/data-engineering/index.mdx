@@ -3,4 +3,14 @@ title: Data engineering
 description: A self hosted data pipeline that scrapes, transforms, and serves
 ---
 
-Lets build a data pipeline that scrapes, transforms, and serves data.
+My objective with this project is to make publically available data like [data.gov](https://data.gov/) accessible, explorable
+and documentable by users through web application interface.
+
+This is a data pipeline using [Spring Cloud Data Flow] (https://spring.io/projects/spring-cloud-dataflow) to consume data from an HTTP endpoint
+and write the payload to a Cassandra database.
+
+Extract -> Transform -> Load
+
+1. Extract: HTTP endpoint
+2. Transform: Spring Cloud Data Flow
+3. Load: Cassandra
