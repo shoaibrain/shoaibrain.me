@@ -15,7 +15,9 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/shoaib_rain",
     github: "https://github.com/shoaibrain",
-    resume: "https://docs.google.com/document/d/1SOvcXS6SrS-ZpT9Hlub4jTWUOU9sQTnqEWgp_6TEkho/edit?usp=sharing"
+    resume: "https://docs.google.com/document/d/1SOvcXS6SrS-ZpT9Hlub4jTWUOU9sQTnqEWgp_6TEkho/edit?usp=sharing",
+    linkedin: "https://www.linkedin.com/in/shoaibrain/",
+    instagram: "https://www.instagram.com/shoaib99rain/"
   },
 }
 

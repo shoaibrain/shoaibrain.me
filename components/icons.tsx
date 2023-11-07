@@ -7,6 +7,9 @@ import {
     ChevronRight,
     MoveUpRight,
     Laptop,
+    Github,
+    Linkedin,
+    Instagram,
     type Icon as LucideIcon,
   } from "lucide-react"
   
@@ -21,4 +24,7 @@ import {
     moveUpRight: MoveUpRight,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
+    gitHub: Github,
+    linkedin: Linkedin,
+    instagram: Instagram,
   }
