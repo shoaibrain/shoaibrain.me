@@ -1,0 +1,45 @@
+---
+title: Deploying Wiliot Pixels
+description: A demo deployment of Wiliot's Pixels for Wiliot Field Engineer Interview
+tags: ["interview", "meta"]
+image: /images/blog/wiliot-tech.jpg
+date: "2023-11-15"
+authors:
+  - shoaibrain
+---
+
+# Deploying Wiliot's Pixels for Technical Interview
+
+## Introduction
+
+[Wiliot](https://www.wiliot.com/) is a fascinating technology that brings everyday objects from the physical world into the digital
+space. Wiliot's Pixels are tiny, battery-free, and wireless sticker tags that can be attached to an object to track various metrics associated with and around it.
+It provides intelligence to physical objects including packages, beverages, medicine, clothing, and more.
+
+These pixels have antena that harvest energy from radio waves to power themselves, and with the help me embedded thumb sized processors, they can
+communicate with other devices, and send data to the cloud for further processing.
+
+## Task for the technical interview
+
+I was asked to deploy six Wiliot Pixels on a box containing various materials (metals, plastics, liquids, etc.)
+
+I successfully deployed the pixels by the following steps executed in the given order:
+
+1. I created a new project on the [Wiliot Cloud](https://platform.wiliot.com/) and named it `Wiliot Technical Interview`.
+2. I placed two pixels on three boxes containing various materials. and scanned the barcode on the pixels to register them as assets on the Wiliot Cloud.
+   After registering the pixels, I was able to see them on the Wiliot Cloud dashboard as an Assets.
+3. After that booted a bridge device and connected it to the Wiliot Cloud. The bridge device is a small device that connects to the Wiliot Cloud and
+   acts as a gateway for the pixels to send data to the cloud. Another important function of the bridge device is to provide power to the pixels through
+   the Radio Frequency waves.
+4. Once the bridges were booted up and connected, the pixels were able to harvest energy from the device and push its metrics readings like temperature,
+   humidity, pressure, etc. to the cloud. I was able to confirm this by checking the metrics on the Wiliot Cloud dashboard.
+5. Followed by that, I created a Location on the Wiliot Cloud dashboard and named it `Wiliot Technical Interview Zone`. I then added the three boxes containing
+   the pixels to the Zone, partitioning them into multiple zones. A **Location** is a point of interest that can be
+   further segmented into different zones.
+6. After associating each bridge to the zones, I triggered a location change event by moving the boxes to different corners of the room. I waves were able to
+   see the location change events on the Wiliot Cloud dashboard.
+
+## Conclusion
+
+This was a very interesting task. Not only I enjoyed deploying the pixels, but I also learned about the technology behind it, and the challenges that
+Field technicians face while deploying them. For me, the most challenging part was to get the orientation of the bridges relative to the pixels right.
