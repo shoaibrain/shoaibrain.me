@@ -1,0 +1,39 @@
+---
+title: Schema design for eduSpace
+description: Schema design using Prisma for school management system
+---
+
+Considering initial functional requirements, the schema is proposed to answers questions regarding objects/entities
+involved in the system. Some of these entities are Student, Employee, Teacher, etc.
+
+Anything we want to know about Student like academic or personal information, or HR and payroll information about
+Employee, the user should be able to query the database and get the information. We want to store these data efficiently,
+securely, and queries running on them should be fast. Just some heuristic to start with.
+
+<Callout type="info">
+  This schema will evolve over time. [most recent
+  schema](https://github.com/shoaibrain/edusapce/tree/main/prisma)
+</Callout>
+
+Other than tables for user configuration, and setup, the main tables are
+This is gist of the [schema](https://github.com/shoaibrain/edusapce/tree/main/prisma)
+
+ER diagram: [draft](https://lucid.app/lucidchart/71a14f16-c1dc-4c1d-8b45-804e86e67fd0/edit?viewport_loc=98%2C60%2C3300%2C1722%2C0_0&invitationId=inv_494a5291-c154-45e2-89ee-5d2e627945a7)
+
+```js
+
+model User {
+ // User is the admin of the school. Admin can setup school, and configure system for
+ // their preferences. And most importantly, admin can run school activities and functions using
+ // this system. These academic, administrative, and financial activities are the core of the system.
+}
+
+model School {
+ // A school is an organization that is setup by User/Admin.
+ // School have identity, policies, and hierarchical structure among sub-user.
+ // For example, a school can have multiple campuses, departments, Employees, and Students.
+}
+
+```
+
+The is User is a tenant. A tenant can register schools, and manage them in eduSpace.

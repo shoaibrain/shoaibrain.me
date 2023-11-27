@@ -1,32 +1,56 @@
 ---
 title: eduSpace
-description: A multi-tenant school management system hosted on vercel cloud
+description: A self hosted school management system built with Reactjs, TypeScript, RSC, Prisma and MySQL.
 ---
 
-This is a multi-tenant school management system hosted on vercel cloud. The objective of this project is to
-implement a complete school managenet system, and a learning management system for studnets with integrated LLM that
-learns from the student's performance and suggests the best learning material for the student.
+<Image
+  src="/images/blog/initial-design.jpeg"
+  width="718"
+  height="404"
+  alt="Image"
+/>
 
-## Potential Features of eduSpace
+<Callout>
+  An initial highlevel design of eduSpace. This architecture is subject to
+  change as the I progress with the project. [code
+  repo](https://github.com/shoaibrain/edusapce)
+</Callout>
 
-1. User management and role based access control
-2. School management
-3. HR and Payroll
-4. Academic Features
-5. Student and Guardian portal
-6. ...
+This design approach lies on the extreme where all tenants/users will share all the
+components. Although this tenant model is attractive for its simplicity and less expensive to
+run, this design has lots of limitations.
 
-## Current Story
+## Project Scope & Goals
 
-Click on a section below to learn how the eduSpace is being built.
+When it comes to developing a software, design is a very important factor.
+The design and architecture of a software should not only be scalable but also easy for
+developers to understand and contribute to. The architecture should allow for easy, incremental
+changes and should be able to adapt to new requirements.
+
+I've devided to go with [nextjs](https://nextjs.org/) as it provides a lot of features out of the box.
+From scaling to routing, developer experience, Next.js has it all. And this allows me to focus on the
+software product & business logic itself rather than the infrastructure.
+
+In the first series of this project, I'll be focusing on building the core features of the software.
+For starter, these features will focus on four main entities in any hypothetical school system.
+
+1. Students
+2. Teachers
+3. Guardians
+4. ClassGrades
+
+To keep things simple, I'm starting with these four entities. The user
+of eduSpace will be able to manage students, teachers, guardians and class grades.
+
+Click on a section below to learn more.
 
 <div className="grid gap-4 mt-6">
   
-  <Card href="/work/in-progress">
+  <Card href="/work/eduSpace/database-v1">
 
-    ### Tenant Model
+    ### A database schema for school
 
-    Learn how tenants are modeled and managed.
+    Explains the database schema definition using Prisma.
 
   </Card>
 

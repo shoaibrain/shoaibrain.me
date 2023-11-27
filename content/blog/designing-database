@@ -1,0 +1,83 @@
+---
+title: Database design for SaaS
+description: brainstorming database schema for software as a service
+tags: ["meta", "db"]
+image: /images/blog/database-set.jpeg
+date: "2023-11-24"
+authors:
+  - shoaibrain
+---
+
+## Introduction
+
+A database design is mostly dictated by the business and functional requirements of the application.
+
+School mainly consist of the following entities:
+
+1. Student
+2. Employee
+3. Guardian
+4. GradeLevel
+
+Here, I'm creating a schema for school database.
+
+TODO: Put an image of EER diagram here
+
+<Image
+  src="/images/blog/blog-post-4.jpg"
+  width="718"
+  height="404"
+  alt="Image"
+/>
+ER diagram of school database
+
+Here's what a schema using prisma would look like.
+
+```js
+
+model SchoolYear {
+  id        String   @id @default(cuid())
+  name      String
+  startDate DateTime
+  endDate   DateTime
+  ...
+}
+
+model GradeLevel {
+  id            String
+  name          String
+  description   String?
+  ...
+}
+
+```
+
+TODO: Explain the schema, and why you chose this schema.
+
+## Show CRUD
+
+TODO: show some CRUD operations on this schema with
+
+## SET theory and database
+
+TODO: Explain set theory and how it relates to database
+
+## There are other elements we need to style
+
+I almost forgot to mention links, like [this link to the Tailwind CSS website](https://tailwindcss.com). We almost made them blue but that's so yesterday, so we went with dark gray, feels edgier.
+
+We even included table styles, check it out:
+
+| Wrestler                | Origin       | Finisher           |
+| ----------------------- | ------------ | ------------------ |
+| Bret "The Hitman" Hart  | Calgary, AB  | Sharpshooter       |
+| Stone Cold Steve Austin | Austin, TX   | Stone Cold Stunner |
+| Randy Savage            | Sarasota, FL | Elbow Drop         |
+| Vader                   | Boulder, CO  | Vader Bomb         |
+| Razor Ramon             | Chuluota, FL | Razor's Edge       |
+
+We also need to make sure inline code looks good, like if I wanted to talk about `<span>` elements or tell you the good news about `@tailwindcss/typography`.
+
+Talk about JOINS
+
+## Advanced concepts
