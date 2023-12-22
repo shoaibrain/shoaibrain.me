@@ -20,9 +20,8 @@ export default async function AboutPage() {
               />
             </div>
             <span className="font-heading my-4 py-4"> About me <br/> </span>
-
-            I'm an engineer with focus in software engineering, machine learning and robotics.
-            In the past I've worked for Panasonic, NetApp, UT Texas, Srimatrix Inc, and a number of other companies.
+            I'm an engineer with focus in software engineering, web development and machine learning.
+            In the past I've worked for NetApp, Panasonic, UT Texas, Srimatrix Inc.
             In addition to my engineering work, I also enjoy podcast, music, hiking, and gaming.
             <br />
             I'm currently pursuing a bachelors in Computer Science at the University of Texas-Arlington.

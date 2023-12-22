@@ -15,9 +15,8 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/shoaib_rain",
     github: "https://github.com/shoaibrain",
-    
     linkedin: "https://www.linkedin.com/in/shoaibrain/",
-    instagram: "https://www.instagram.com/shoaib99rain/"
+    instagram: "https://www.instagram.com/shoaib99rain/",
   },
 }
 
@@ -37,7 +36,7 @@ export const marketingConfig: MarketingConfig = {
     },
     {
       title:"resume",
-      href:"https://docs.google.com/document/d/1SOvcXS6SrS-ZpT9Hlub4jTWUOU9sQTnqEWgp_6TEkho/edit?usp=sharing"
+      href:"https://docs.google.com/document/d/1k0myUid4AUGnUEdI9KKFD0t97yrqnPHbJQyw5wglQvU/edit?usp=sharing"
     }
 
   ],
