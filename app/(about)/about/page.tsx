@@ -29,7 +29,6 @@ export default async function AboutPage() {
             I'm currently working on school management application  
             <Link href="/work/eduspace"  className="text-gray-500 underline"> eduSpace</Link>
              <br/>
-            
             On this website, you'll find an incomplete directory of my engineering work, personal blogs, 
             as well as ramblings about whatever happens to cross my mind.
           </div> 
