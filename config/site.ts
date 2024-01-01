@@ -38,6 +38,5 @@ export const marketingConfig: MarketingConfig = {
       title:"resume",
       href:"https://docs.google.com/document/d/1k0myUid4AUGnUEdI9KKFD0t97yrqnPHbJQyw5wglQvU/edit?usp=sharing"
     }
-
   ],
 }

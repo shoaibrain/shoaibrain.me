@@ -43,30 +43,6 @@ export const worksConfig: WorksConfig = {
         },
       ],
     },
-    {
-      title: "Data Engineering",
-      items: [
-        {
-          title: "Overview",
-          href: "/work/data-engineering",
-          disabled: true,
-        },
-        {
-          title: "Technical details",
-          href: "/work",
-          disabled: true,
-        },
-        {
-          title: "Testing & Quality",
-          href: "/work",
-          disabled: true,
-        },
-        {
-          title: "Showcase",
-          href: "/work",
-          disabled: true,
-        },
-      ],
-    },
+
   ],
 }

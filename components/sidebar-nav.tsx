@@ -12,7 +12,6 @@ export interface WorksSidebarNavProps {
 
 export function WorksSidebarNav({ items }: WorksSidebarNavProps) {
   const pathname = usePathname()
-
   return items.length ? (
     <div className="w-full">
       {items.map((item, index) => (

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import hike from "@/public/images/hike.jpeg";
+import Link from "next/link";
+
 export default async function AboutPage() {
 
 
@@ -24,7 +26,10 @@ export default async function AboutPage() {
             In the past I've worked for NetApp, Panasonic, UT Texas, Srimatrix Inc.
             In addition to my engineering work, I also enjoy podcast, music, hiking, and gaming.
             <br />
-            I'm currently pursuing a bachelors in Computer Science at the University of Texas-Arlington.
+            I'm currently working on school management application  
+            <Link href="/work/eduspace"  className="text-gray-500 underline"> eduSpace</Link>
+             <br/>
+            
             On this website, you'll find an incomplete directory of my engineering work, personal blogs, 
             as well as ramblings about whatever happens to cross my mind.
           </div> 

@@ -1,8 +1,5 @@
 import { notFound } from "next/navigation"
-
-
 import { Mdx } from "@/components/mdx-components"
-
 import "@/app/styles/mdx.css"
 import { Metadata } from "next"
 import Image from "next/image"
