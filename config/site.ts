@@ -23,10 +23,6 @@ export const siteConfig = {
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: "about",
-      href: "/about",
-    },
-    {
       title:"blog",
       href:"/blog"
     },
@@ -34,9 +30,5 @@ export const marketingConfig: MarketingConfig = {
       title: "work",
       href:"/work",
     },
-    {
-      title:"resume",
-      href:"https://docs.google.com/document/d/1k0myUid4AUGnUEdI9KKFD0t97yrqnPHbJQyw5wglQvU/edit?usp=sharing"
-    }
   ],
 }

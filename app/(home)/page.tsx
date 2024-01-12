@@ -22,21 +22,24 @@ export default async function HomePage() {
               </div>
             </div>
             
-            <div className="pt-6 sm:p-8 text-center sm:text-left space-y-4">
-                <figcaption className='text-xl text-left'>
+            <div className="pt-6 sm:p-4 text-center sm:text-left space-y-4">
+                <div className='text-xl text-left'>
                     <div className="leading-8 font-bold">
                       Shoaib Rain
                     </div>
                     <div className='text-muted-foreground'>
-                      Software Engineer in Dallas
+                      Software Engineer in Dallas <br />
                     </div>
                     <p className="text-lg font-medium ">
-                      Hi there 👋 My name is Shoaib. I'm a software engineer.
-                      I enjoy playing music, hiking, listening podcasts,
-                      and coffee. <br />
-                      <Link href="/about"  className="text-gray-500 underline">about me</Link> <br/>
+                      I'm an engineer with focus in software engineering & web development. 
+                      I also enjoy podcast, music, hiking, and good coffee.
+                      <br /> <br />
+                      On this website, you'll find an incomplete directory of my work, blogs,
+                      as well as ramblings about whatever happens to cross my mind.
+                      <br /> 
                     </p>
-                </figcaption>
+
+                </div>
             </div>
         </figure>
         </div>
