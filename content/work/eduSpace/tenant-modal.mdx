@@ -1,4 +1,45 @@
 ---
-title: eduSpace | tenant model
-description: A tenant model for eduSpace
+title: Modeling Tenant for eduSpace
+description: overview of tenant model in a school management Application
 ---
+
+There're several parts to consider while designing a multi-tenant systems for schools.
+Intending to share some of the resources among the tenants, while also providing a
+considerable level of isolation between them. These are the some of the requirements
+and considration to pay attention to:
+
+- How's multi-tenancy deployed on Vercel, and how to manage the tenants?
+- Application customization for tenants
+- How will you monitor, manage, automate, scale, and govern your Vercel environment,
+  and how will multitenancy impact this?
+- Which components of eduSpace handles tenant onboarding and management,
+  and how should these components be designed?
+- Be mindful of customers' requirements for regulatory compliance, the isolation of their data,
+  and ensuring that you meet a specified service-level objective (SLO), like uptime or service availability.
+
+## Business to business (B2B)
+
+eduSpace customers are other organizations. Tenant is mapped to those organizations.
+Customers have different divisions (team or department) and they could have presenece in
+different countries/regions. A single Tenant will have multiple users. These users are
+Teachers, Student, Parents, and Admins etc.
+
+## Tenant isolation
+
+A full multi-tenant deployment where every components are shared among the tenant.
+
+#### Challenges
+
+- address concerns about the effects that individual tenants can have on the overall system.
+- figure out way to track & associate Vercel cost with each tenant.
+- how to handle maintainance and upgrades of the system. How does this model affect the
+  ability to upgrade the system?
+- scale?
+
+## Tenant lifecycle
+
+- Trial tenants
+- Onboard new tenants
+- Upgrade tenant's infrastructure
+- Offboard tenants
+- Deactivate and reactivate tenants
