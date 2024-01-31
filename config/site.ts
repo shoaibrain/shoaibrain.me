@@ -13,7 +13,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shoaib_rain",
+    
     github: "https://github.com/shoaibrain",
     linkedin: "https://www.linkedin.com/in/shoaibrain/",
     instagram: "https://www.instagram.com/shoaib99rain/",
