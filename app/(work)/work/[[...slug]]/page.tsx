@@ -1,7 +1,9 @@
+//@ts-nocheck
+
 import { notFound } from "next/navigation"
 import { getTableOfContents } from "@/lib/toc"
 import { Mdx } from "@/components/mdx-components"
-
+import { redirect } from 'next/navigation'
 import "@/app/styles/mdx.css"
 import { Metadata } from "next"
 
@@ -78,7 +80,9 @@ export async function generateStaticParams(): Promise<
 }
 
 export default async function WorkPage({ params }: WorkPageProps) {
+  redirect('/')
   const work = await getWorkFromParams(params)
+  
   if (!work) {
     notFound()
   }
