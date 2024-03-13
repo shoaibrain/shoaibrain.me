@@ -1,0 +1,133 @@
+---
+title: Cruising Linux File System
+description: Exploring Linux File Systems and Generating JSON Documents Using Go
+tags: ["meta", "file system"]
+image: /images/blog/file-sys-example.jpg
+date: "2024-02-26"
+authors:
+  - shoaibrain
+---
+
+## Navigating the File System: A Tree Analogy
+
+The Linux file system structure resembles a tree, offering a clear visual metaphor for understanding how everything is
+interconnected. Imagine the following parallels:
+
+| **Root directory**              | **Directories**                                                | **Files**                             |
+| ------------------------------- | -------------------------------------------------------------- | ------------------------------------- |
+| Trunk of the tree               | Branches, further dividing and organizing content              | Leaves, individual units holding data |
+| Starting point of the hierarchy | Subcategories within the hierarchy                             | Fundamental units storing information |
+| Root of the file system         | Contain additional subdirectories, forming a branching network | Reside within directories             |
+
+GNU [Tree](<https://en.wikipedia.org/wiki/Tree_(command)>) is a recursive directory listing program that produces a depth-indented listing of files. It is used to recursively list or display the content
+of a directory in a tree-like format. It allows users to display the hierarchy of files and directories, including hidden ones, and can sort the output based
+on various criteria.
+
+## Cruising the Linux File System with Go
+
+This simple [Go program](https://github.com/shoaibrain/cruising-filesystem) starts with current directory and starts cruising the Linux file system, exploring and cataloging its contents.
+At its core, the program recursively traverses a given directory and its subdirectories, constructing a comprehensive tree-like structure
+that accurately reflects the file system hierarchy.
+
+> **Note:** The `shouldSkipEntry` function in the program helps us in excluding hidden files and directories from the output.
+> By checking if a file or directory name starts with a period (`.`), a convention for hidden entities in Unix-like systems,
+> the program skips those entries if desired. Any filters while reading the entries can be implemented here.
+
+Additionally, the program demonstrates its flexibility by allowing users to selectively exclude specific files from the output. In this case, the content of a file named "file-cruiser" is intentionally skipped, showcasing the ability to omit files based on custom criteria.
+
+The program's output is a JSON representation of the file system structure, including information about file names, types (file or directory), and file contents (if included). This JSON format facilitates seamless integration with other applications or further processing tasks.
+
+```json
+{
+  "name": ".",
+  "type": "directory",
+  "children": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "content": "# cruising-filesystem\n"
+    },
+    {
+      "name": "data.json",
+      "type": "file",
+      "content": "{\n    \"name\": \"shoaibrain\"\n}"
+    },
+    {
+      "name": "dir-foo",
+      "type": "directory"
+    },
+    {
+      "name": "dir-one",
+      "type": "directory",
+      "children": [
+        {
+          "name": "file1.txt",
+          "type": "file",
+          "content": "Text file 1"
+        },
+        {
+          "name": "hello.py",
+          "type": "file",
+          "content": "print(\"Hello Linux FileSystem\")\n"
+        }
+      ]
+    },
+    {
+      "name": "dir-three",
+      "type": "directory",
+      "children": [
+        {
+          "name": "dir-bar",
+          "type": "directory",
+          "children": [
+            {
+              "name": "data.txt",
+              "type": "file",
+              "content": "A text file"
+            },
+            {
+              "name": "my-file.xml",
+              "type": "file",
+              "content": "\u003cmessage\u003eHello Linux FileSystem\u003c/message\u003e\n"
+            }
+          ]
+        },
+        {
+          "name": "doc.adoc",
+          "type": "file",
+          "content": "= Hello Linux FileSystem\n\n**Hello Linux FileSystem**\n"
+        }
+      ]
+    },
+    {
+      "name": "dir-two",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Program.java",
+          "type": "file",
+          "content": "public class Program {\n\n    public static void main(String[] args) {\n        System.out.println(\"Hello Linux FileSystem\");\n    }\n}\n"
+        }
+      ]
+    },
+    {
+      "name": "file-cruiser",
+      "type": "file"
+    },
+    {
+      "name": "file-cruiser.go",
+      "type": "file",
+      "content": "package main\nimport (\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"io/ioutil\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"sort\"\n\t\"strings\"\n)\n// FileNode represents a file or directory in the file system.\ntype FileNode struct {\n\tName     string `json:\"name\"`\n\tType     string `json:\"type\"`\n\tContent  string `json:\"content,omitempty\"`\n\tChildren []*FileNode `json:\"children,omitempty\"`\n}\n// traverseDirectory recursively traverses the given directory and builds the file tree structure.\nfunc traverseDirectory(dirPath string) (*FileNode, error) {\n\tfileInfo, err := os.Stat(dirPath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tnode := \u0026FileNode{\n\t\tName: filepath.Base(dirPath),\n\t\tType: \"file\",\n\t}\n\tif fileInfo.IsDir() {\n\t\tnode.Type = \"directory\"\n\t\tentries, err := os.ReadDir(dirPath)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tsort.Slice(entries, func(i, j int) bool {\n\t\t\treturn entries[i].Name() \u003c entries[j].Name()\n\t\t})\n\t\tfor _, entry := range entries {\n\t\t\tif shouldSkipEntry(entry.Name()) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tentryPath := filepath.Join(dirPath, entry.Name())\n\t\t\tchild, err := traverseDirectory(entryPath)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\tnode.Children = append(node.Children, child)\n\t\t}\n\t} else {\n\t\t// If it's a file, read the contents and store them in the FileNode\n\t\tcontent, err := ioutil.ReadFile(dirPath)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\t// Skip the content if the file is named \"file-cruiser\"\n\t\tif filepath.Base(dirPath) != \"file-cruiser\" {\n\t\t\tnode.Content = string(content)\n\t\t}\n\t}\n\treturn node, nil\n}\n// shouldSkipEntry returns true if the given entry name should be skipped\nfunc shouldSkipEntry(name string) bool {\n\treturn strings.HasPrefix(name, \".\")\n}\n// writeJSONToFile writes the given file tree as JSON to the specified file path.\nfunc writeJSONToFile(filePath string, root *FileNode) error {\n\tjsonData, err := json.MarshalIndent(root, \"\", \"    \")\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn os.WriteFile(filePath, jsonData, 0644)\n}\nfunc main() {\n\tdirPath := \".\"\n\tif len(os.Args) \u003e 1 {\n\t\tdirPath = os.Args[1]\n\t}\n\troot, err := traverseDirectory(dirPath)\n\tif err != nil {\n\t\tfmt.Println(\"Error:\", err)\n\t\treturn\n\t}\n\terr = writeJSONToFile(\"file-tree.json\", root)\n\tif err != nil {\n\t\tfmt.Println(\"Error:\", err)\n\t\treturn\n\t}\n}"
+    }
+  ]
+}
+```
+
+This blog explored the Linux file system structure and demonstrated how to navigate it using a Go program. We used the analogy of a tree to
+understand the hierarchical organization of files and directories. The presented program recursively traverses a directory and its
+subdirectories, constructing a JSON representation of the file system. This JSON output can be valuable for various purposes, such
+as backups or integration with other applications.
+
+Feel free to explore the provided Go program on Github: https://github.com/shoaibrain/cruising-filesystem and experiment with it further.
+You can potentially modify the code to suit your specific file system exploration needs. Looking ahead, we could explore incorporating
+functionalities like handling compressed files or selective file content inclusion based on extensions.
