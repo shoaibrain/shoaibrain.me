@@ -4,8 +4,6 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 import { ThemeProvider } from '@/components/theme-provider'
-import { MainNav } from '@/components/main-nav'
-import { marketingConfig } from '@/config/site'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 
 

@@ -16,7 +16,7 @@ export const siteConfig = {
     
     github: "https://github.com/shoaibrain",
     linkedin: "https://www.linkedin.com/in/shoaibrain/",
-    instagram: "https://www.instagram.com/shoaib99rain/",
+    instagram: "https://www.instagram.com/shoaibrain4real/",
   },
 }
 
@@ -26,9 +26,9 @@ export const marketingConfig: MarketingConfig = {
       title:"blog",
       href:"/blog"
     },
-    // {
-    //   title: "work",
-    //   href:"/work",
-    // },
+    {
+      title: "work",
+      href:"/work",
+    },
   ],
 }

@@ -1,9 +1,6 @@
-//@ts-nocheck
-
 import { notFound } from "next/navigation"
 import { getTableOfContents } from "@/lib/toc"
 import { Mdx } from "@/components/mdx-components"
-import { redirect } from 'next/navigation'
 import "@/app/styles/mdx.css"
 import { Metadata } from "next"
 
@@ -13,6 +10,8 @@ import { allWorks } from "@/.contentlayer/generated"
 import { WorksPageHeader } from "@/components/page-header"
 import { WorksPager } from "@/components/pager"
 import { DashboardTableOfContents } from "@/components/toc"
+import { Accordion, AccordionContent, AccordionTrigger } from "@/components/ui/accordion"
+import { AccordionItem } from "@radix-ui/react-accordion"
 
 interface WorkPageProps {
   params: {
@@ -27,7 +26,6 @@ async function getWorkFromParams(params) {
   if (!work) {
     null
   }
-
   return work
 }
 export async function generateMetadata({
@@ -71,6 +69,7 @@ export async function generateMetadata({
   }
 }
 
+
 export async function generateStaticParams(): Promise<
   WorkPageProps["params"][]
 > {
@@ -80,7 +79,7 @@ export async function generateStaticParams(): Promise<
 }
 
 export default async function WorkPage({ params }: WorkPageProps) {
-  redirect('/')
+  
   const work = await getWorkFromParams(params)
   
   if (!work) {
